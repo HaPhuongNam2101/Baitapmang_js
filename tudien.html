@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="word">Nhập từ: </label>
+    <input type="text" id="word">
+    <button onclick="getDich()">Dịch</button>
+    <p id="result"></p>
+</body>
+<script>
+    function getDich() {
+        let arrEng = ["banana", "apple", "orange", "pen", "pencil", "book"];
+        let arrVie = ["chuối", "táo", "cam", "bút", "bút chì", "sách"];
+        let word = document.getElementById("word").value;
+        let index_Eng = -1;
+        for (let i = 0; i < arrEng.length; i++) {
+            if (word == arrEng[i]) {
+                index_Eng = i;
+                break;
+            }
+        }
+        if (index_Eng !== -1) {
+            document.getElementById("result").innerHTML = arrVie[index_Eng];
+        }
+    }
+
+</script>
+
+</html>
